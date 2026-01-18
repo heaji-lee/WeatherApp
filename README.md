@@ -79,7 +79,7 @@ dotnet run
 * Forecasts are limited to 15 days maximum by the API.
 
 ## Future Enhancements
-* Temperature Conversion - Convert Fahrenheit to Celsius (or allow user choice). 
+* Allow User to go back to the options.
 * Additional Weather Fields - Add wind speed, precipitation, UV index, etc. 
 * Colour-Coded Output - Highlight extremes or key fields in console output. 
 * Better Date Input - Allow shortcuts like "today", "tomorrow", or "last week".
