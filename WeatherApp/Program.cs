@@ -89,6 +89,23 @@ try {
   foreach (var day in response.Days) {    
     var value = WeatherField.GetWeatherFieldValue(day, weatherField);
     Console.WriteLine($"{day.Datetime}: {value}");
+    Console.WriteLine("-------------------------");
+  }
+  Console.WriteLine("Would you like to see more data? (y/n)");
+  var moreData = Console.ReadLine();
+  if (moreData?.ToLower() == "y") {
+    Console.WriteLine("Would you like to see another field? (y/n)");
+    var anotherField = Console.ReadLine();
+    if (anotherField?.ToLower() == "y") {
+      weatherField = ConsoleInput.ReadRequired(
+        "What weather field do you want? (humidity, conditions, min temp, max temp, sunrise, sunset.)"
+      ).ToLower().Replace(" ", "");
+      foreach (var day in response.Days) {    
+        var value = WeatherField.GetWeatherFieldValue(day, weatherField);
+        Console.WriteLine($"{day.Datetime}: {value}");
+        Console.WriteLine("-------------------------");
+      }
+    }
   }
 }
 catch (Exception ex) {

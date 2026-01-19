@@ -1,16 +1,11 @@
 using System.Text.Json;
-// make user enter city, then ask if they want historical, current or forecast weather
-// if historical, ask for date range
-// if forecast, ask for number of days (up to 15)
-// if current, ask what field (temperature, humidity, wind speed, etc.)
 
 public class WeatherService
 {
     private readonly HttpClient _httpClient;
     private readonly string _apiKey;
 
-    public WeatherService(HttpClient httpClient, string apiKey)
-    {
+    public WeatherService(HttpClient httpClient, string apiKey) {
       _httpClient = httpClient;
       _apiKey = apiKey;
     }
@@ -19,8 +14,7 @@ public class WeatherService
       string city, 
       string? startDate = null, 
       string? endDate = null
-      )
-    {
+      ) {
       var url =
         $"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{city}" + 
         (string.IsNullOrEmpty(startDate) ? "" : $"/{startDate}") +
