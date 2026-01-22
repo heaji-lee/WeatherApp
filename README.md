@@ -23,9 +23,6 @@ A C# console application that fetches weather data from the [Visual Crossing Wea
 ## Tech Stack
 
 - C# (.NET 10)
-- Console application
-- HttpClient for API requests
-- Environment variables for API key management
 
 ---
 
