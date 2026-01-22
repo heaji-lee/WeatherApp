@@ -1,9 +1,6 @@
-public static class ConsoleInput
-{
-  public static string ReadRequired(string prompt)
-  {
-    while (true)
-    {
+public static class ConsoleInput {
+  public static string ReadRequired(string prompt) {
+    while (true) {
       Console.WriteLine(prompt);
       var input = Console.ReadLine();
 

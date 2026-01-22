@@ -1,13 +1,11 @@
 using System.Text.Json.Serialization;
 
-public class WeatherResponse
-{
+public class WeatherResponse {
   [JsonPropertyName("days")]
   public List<Day>? Days { get; set; }
 }
 
-public class Day
-{
+public class Day {
   [JsonPropertyName("datetime")]
   public string? Datetime { get; set; }
 

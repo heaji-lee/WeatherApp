@@ -1,7 +1,6 @@
 using System.Text.Json;
 
-public class WeatherService
-{
+public class WeatherService {
   private readonly HttpClient _httpClient;
   private readonly string _apiKey;
 
@@ -11,12 +10,12 @@ public class WeatherService
   }
 
   public async Task<WeatherResponse> GetWeatherAsync(
-    string city, 
-    string? startDate = null, 
+    string city,
+    string? startDate = null,
     string? endDate = null
     ) {
     var url =
-      $"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{city}" + 
+      $"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{city}" +
       (string.IsNullOrEmpty(startDate) ? "" : $"/{startDate}") +
       (string.IsNullOrEmpty(endDate) ? "" : $"/{endDate}") +
       $"?unitGroup=metric&contentType=json&key={_apiKey}";
@@ -30,9 +29,8 @@ public class WeatherService
 
     var weatherResponse = JsonSerializer.Deserialize<WeatherResponse>(
       json,
-      new JsonSerializerOptions
-      {
-          PropertyNameCaseInsensitive = true
+      new JsonSerializerOptions {
+        PropertyNameCaseInsensitive = true
       });
 
     if (weatherResponse == null)

@@ -1,0 +1,56 @@
+# Top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.cs]
+# K&R style braces
+csharp_new_line_before_open_brace = false
+csharp_new_line_before_else = false
+csharp_prefer_braces = true
+
+# Indentation
+csharp_indent_braces = false
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = false
+csharp_indent_block_contents = true
+csharp_indent_labels = one_less_than_current
+
+# Spaces
+csharp_space_before_open_square_brackets = false
+csharp_space_between_empty_square_brackets = false
+csharp_space_before_colon_in_base_type_list = true
+csharp_space_after_colon_in_base_type_list = true
+csharp_space_after_comma = true
+csharp_space_before_comma = false
+csharp_space_after_dot = false
+csharp_space_before_dot = false
+csharp_space_after_semicolon_in_for_statement = true
+csharp_space_before_semicolon_in_for_statement = false
+csharp_space_between_empty_braces = false
+csharp_space_before_open_brace = true
+csharp_wrap_arguments_style=chop_if_long
+
+# Code style
+csharp_prefer_braces = when_multiline
+
+# Naming conventions (basic)
+dotnet_naming_symbols.interface_prefix.required_prefix = I
+dotnet_naming_symbols.interface_prefix.applicable_kinds = interface
+dotnet_naming_symbols.interface_prefix.capitalization = pascal_case
+dotnet_naming_symbols.property_field_case.capitalization = pascal_case
+dotnet_naming_symbols.method_case.capitalization = pascal_case
+
+[*.ts]
+quote_type = single
+ij_typescript_use_double_quotes = false
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

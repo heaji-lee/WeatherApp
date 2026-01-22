@@ -73,7 +73,7 @@ if (weatherDataType.ToLower() == "current") {
   endDate = Console.ReadLine();
 
   response = await weatherService.GetWeatherAsync(city, startDate, endDate);
-} 
+}
 
 try {
   if (response == null) {
@@ -82,11 +82,11 @@ try {
   }
 
   if (response.Days == null || response.Days.Count == 0) {
-      Console.WriteLine("No data found for the specified field.");
-      return;
+    Console.WriteLine("No data found for the specified field.");
+    return;
   }
 
-  foreach (var day in response.Days) {    
+  foreach (var day in response.Days) {
     var value = WeatherField.GetWeatherFieldValue(day, weatherField);
     Console.WriteLine($"{day.Datetime}: {value}");
     Console.WriteLine("-------------------------");
@@ -100,7 +100,7 @@ try {
       weatherField = ConsoleInput.ReadRequired(
         "What weather field do you want? (humidity, conditions, min temp, max temp, sunrise, sunset.)"
       ).ToLower().Replace(" ", "");
-      foreach (var day in response.Days) {    
+      foreach (var day in response.Days) {
         var value = WeatherField.GetWeatherFieldValue(day, weatherField);
         Console.WriteLine($"{day.Datetime}: {value}");
         Console.WriteLine("-------------------------");
